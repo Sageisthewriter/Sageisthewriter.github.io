@@ -1,0 +1,11 @@
+{
+  "name": "sage-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check app.js && node --check motion.js && node --check scripts/serve.mjs"
+  }
+}

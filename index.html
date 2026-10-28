@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141310">
+  <meta name="description" content="Sage is a multi-genre fiction writer and editor. Explore fantasy, mystery, romance, science fiction, and drama samples, and bring your next story to life.">
+  <title>Sage — Stories worth telling.</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('sage:site-theme')||(localStorage.getItem('sage:theme')==='paper'?'light':'dark')}catch{document.documentElement.dataset.theme='dark'}</script>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;450;500;550;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./motion.css">
+  <link rel="stylesheet" href="./mobile.css">
+  <script src="./config.js" defer></script>
+  <script src="./app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="portfolio">
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="Sage home">sage<span class="wordmark-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#writing" class="nav-link"><span class="nav-label-full">Selected writing</span><span class="nav-label-short">Writing</span></a>
+        <button type="button" class="site-theme-toggle" id="site-theme-toggle" aria-label="Switch to light mode" aria-pressed="false"><span class="theme-symbol" aria-hidden="true">☼</span></button>
+        <a href="#contact" class="nav-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero section" id="about" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="small-rule"></span> FICTION WRITER & EDITOR</p>
+          <h1 id="hero-title">Let Sage<br>write <em>for you.</em></h1>
+          <p class="hero-intro">I’m Sage, a professional multi-genre fiction writer and editor looking forward to being of service to you.</p>
+          <a href="#writing" class="button button-gold">Explore my writing <span aria-hidden="true">↗</span></a>
+          <p class="hero-footnote">Your imagination. A story worth telling.</p>
+        </div>
+        <div class="hero-art" role="group" aria-label="Featured sample books">
+          <div class="art-orbit orbit-one" aria-hidden="true"></div><div class="art-orbit orbit-two" aria-hidden="true"></div>
+          <span class="art-star star-one" aria-hidden="true">✧</span><span class="art-star star-two" aria-hidden="true">✦</span><span class="art-star star-three" aria-hidden="true">✧</span>
+          <div class="book-shadow" aria-hidden="true"></div>
+          <button type="button" class="hero-book book-back" data-book="a-thiefs-gambit" data-selected="false" aria-label="Bring A Thief’s Gambit to the front" aria-pressed="false" aria-describedby="book-hint">
+            <span class="book-pages" aria-hidden="true"><span class="page-heading">A Thief’s Gambit</span><span class="page-excerpt"></span><span class="page-folio">II</span></span>
+            <span class="book-cover" aria-hidden="true"><span class="book-inner"><span class="book-kicker">A FICTION SAMPLE BY SAGE</span><span class="book-ornament" data-book-ornament="key"></span><span class="book-small-title">A THIEF’S</span><span class="book-main-title"><i>Gambit</i></span><span class="book-line"></span><span class="book-author">SAGE</span></span><span class="book-spine"></span></span>
+          </button>
+          <button type="button" class="hero-book book-front" data-book="the-dragons-pact" data-selected="true" aria-label="Open The Dragon’s Pact" aria-pressed="true" aria-describedby="book-hint">
+            <span class="book-pages" aria-hidden="true"><span class="page-heading">The Dragon’s Pact</span><span class="page-excerpt"></span><span class="page-folio">I</span></span>
+            <span class="book-cover" aria-hidden="true"><span class="book-inner">
+              <span class="book-kicker">A FICTION SAMPLE BY SAGE</span>
+              <div class="book-ornament" id="hero-ornament"></div>
+              <span class="book-small-title">THE</span>
+              <span class="book-main-title">Dragon’s<br><i>Pact</i></span>
+              <span class="book-line"></span>
+              <span class="book-author">SAGE</span>
+            </span><span class="book-spine"></span></span>
+          </button>
+          <p class="book-hint" id="book-hint" aria-live="polite">Open the front book. Pick the next adventure.</p>
+          <div class="art-caption" aria-hidden="true"><span class="caption-line"></span> A LITTLE MAGIC. A LOT OF POSSIBILITY.</div>
+          <span class="art-vertical" aria-hidden="true">WORLDS BUILT FROM WORDS</span>
+        </div>
+        <div class="hero-bottom"><span>GHOSTWRITING <i>✦</i> LINE & DEVELOPMENTAL EDITING <i>✦</i> WORLD & CHARACTER BUILDING</span><a href="#writing" aria-label="Scroll to selected writing">SCROLL TO DISCOVER <span aria-hidden="true">↓</span></a></div>
+      </section>
+
+      <section class="writing section" id="writing" aria-labelledby="writing-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 <span class="small-rule"></span> THE COLLECTION</p><h2 id="writing-title">A few worlds<br>to <em>get lost in.</em></h2></div>
+          <p class="section-description">Different genres. Different voices.<br>A little glimpse of what we could create.</p>
+        </div>
+        <div class="collection-toolbar"><span>SELECTED WRITING <span class="muted">/ 07</span></span><span class="toolbar-hint">Choose a story. Stay a while. <span aria-hidden="true">↙</span></span></div>
+        <div class="samples-grid" id="samples-grid" aria-live="polite"><p class="loading-copy">Opening the collection…</p></div>
+        <p class="collection-note"><span aria-hidden="true">✧</span> Every story starts with a possibility. What’s yours?</p>
+      </section>
+
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow">02 <span class="small-rule"></span> THE NEXT CHAPTER</p>
+          <h2 id="contact-title">Have a story<br><em>in mind?</em></h2>
+          <p>Let’s give it a voice. Whether you have a fully imagined world or just the beginning of an idea, I’d love to hear it.</p>
+          <div class="contact-services"><span>Ghostwriting</span><span>Rewrites</span><span>Line & developmental editing</span><span>World & character building</span><span>SFW & NSFW fiction</span></div>
+          <div class="social-links">
+            <a href="https://x.com/Sageisthewriter" target="_blank" rel="noopener noreferrer"><span data-icon="twitter-x"></span><span>Sageisthewriter</span><span aria-hidden="true">↗</span></a>
+            <a href="https://www.instagram.com/depproduction/" target="_blank" rel="noopener noreferrer"><span data-icon="instagram"></span><span>depproduction</span><span aria-hidden="true">↗</span></a>
+            <button type="button" id="copy-discord"><span data-icon="discord"></span><span id="discord-label">SageP8</span><span class="copy-label">COPY</span></button>
+          </div>
+          <p class="contact-boundaries">A note on commissions: I do not write illegal age plays, scat, or snuff.</p>
+        </div>
+        <div class="contact-form-wrap">
+          <div class="form-heading"><h3>A note to Sage</h3></div>
+          <form id="contact-form">
+            <div class="form-row"><label>Your name<input name="name" autocomplete="name" placeholder="What should I call you?" maxlength="100" required></label><label>Your email<input name="email" type="email" autocomplete="email" placeholder="Somewhere I can write back" maxlength="254" required></label></div>
+            <label>What can I help with?<select name="service" required><option value="" disabled selected>Select a service</option><option>Ghostwriting</option><option>Editing</option><option>Rewrites</option><option>World & character building</option><option>Something else</option></select></label>
+            <label>Tell me about your idea<textarea name="message" rows="5" placeholder="A genre, a character, a whole new world… start anywhere." minlength="10" maxlength="4000" required></textarea></label>
+            <label class="honeypot" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+            <div id="turnstile-container"></div>
+            <button type="submit" class="button button-gold send-button">Send your message <span aria-hidden="true">↗</span></button>
+            <p class="form-note" id="form-note">Your email is only used to reply to your inquiry.</p>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="wordmark" href="#about">sage<span class="wordmark-dot">.</span></a><span>Good stories stay with you.</span><a href="#about">BACK TO TOP <span aria-hidden="true">↑</span></a></footer>
+  </div>
+
+  <main id="reader" hidden>
+    <header class="reader-header"><a class="reader-back" href="./#writing"><span aria-hidden="true">←</span> <span>Back to the collection</span></a><a class="wordmark" href="./">sage<span class="wordmark-dot">.</span></a><div class="reader-controls"><button type="button" id="font-decrease" aria-label="Decrease text size">A−</button><button type="button" id="font-increase" aria-label="Increase text size">A+</button><button type="button" id="theme-toggle" aria-label="Switch reading theme"><span data-icon="sun"></span></button></div></header>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+    <article class="reader-article"><div class="reader-title-block"><p class="eyebrow" id="reader-genre"></p><h1 id="reader-title" tabindex="-1"></h1><p class="reader-meta" id="reader-meta"></p><p class="reader-content-note" id="reader-content-note" hidden>This sample includes mature language and sexual references.</p><span class="reader-divider" aria-hidden="true">✧</span></div><div id="reader-body" class="reader-prose"></div><div class="reader-end"><span aria-hidden="true">✦</span><p>End of sample</p><h2>Your story could<br>be the <em>next chapter.</em></h2><a href="./#contact" class="button button-gold">Write to Sage <span aria-hidden="true">↗</span></a><a href="./#writing" class="reader-another">Explore another story <span aria-hidden="true">→</span></a></div></article>
+    <button type="button" id="reader-top" aria-label="Return to start of sample">↑</button>
+  </main>
+  <noscript><p class="noscript">Please enable JavaScript to open the writing samples and use the contact form.</p></noscript>
+</body>
+</html>

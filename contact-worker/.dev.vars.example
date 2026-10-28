@@ -1,0 +1,6 @@
+# Optional local development only. Copy to .dev.vars, which is gitignored.
+# Use a separate Discord channel/webhook for development.
+DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN"
+
+# Only needed when REQUIRE_TURNSTILE is true.
+# TURNSTILE_SECRET_KEY="your-secret-key"

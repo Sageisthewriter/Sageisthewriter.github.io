@@ -1,0 +1,194 @@
+/* Mobile layout uses actual sizes, never a scaled desktop composition. */
+.nav-label-short { display: none; }
+
+@media (max-width: 760px) {
+  :root { scroll-padding-top: 20px; scroll-snap-type: none; }
+  html { -webkit-text-size-adjust: 100%; }
+  body:before { display: none; }
+  .site-header, .hero, .writing, .contact, .site-footer {
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+  }
+  .site-header { height: 78px; gap: 16px; }
+  .site-header .wordmark { font-size: 42px; flex: 0 0 auto; }
+  .site-header nav { gap: 12px; min-width: 0; }
+  .nav-label-full { display: none; }
+  .nav-label-short { display: inline; }
+  .site-header .nav-link { font-size: 12px; padding: 12px 0; }
+  .site-header .nav-contact {
+    min-height: 44px; display: inline-flex; align-items: center;
+    padding: 10px 12px; font-size: 11px; white-space: nowrap;
+  }
+  .site-header .nav-contact span { margin-left: 10px; }
+  .site-theme-toggle { width: 44px; height: 44px; }
+  .site-theme-toggle svg { width: 19px; height: 19px; }
+
+  .hero { padding-top: 34px; grid-template-columns: minmax(0, 1fr); row-gap: 22px; }
+  .hero-copy { min-width: 0; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: 1.9px; margin-bottom: 0; }
+  .hero h1 { font-size: clamp(58px, 15vw, 78px); line-height: 1.02; letter-spacing: -2px; margin: 22px 0; }
+  .hero-intro { max-width: 420px; font-size: 14px; line-height: 1.8; margin-bottom: 25px; }
+  .hero .button { min-height: 48px; font-size: 12px; gap: 30px; padding: 14px 20px; }
+  .hero-footnote { font-size: 11px; line-height: 1.6; margin-top: 14px; max-width: 100%; }
+
+  /* The entrance animation previously overrode transform: scale(...), leaving
+     desktop-size books inside a mobile-size row. No stage scaling is used now. */
+  .hero-art {
+    --mobile-book-width: clamp(132px, 42vw, 180px);
+    width: 100%; max-width: 420px; min-width: 0;
+    height: calc(var(--mobile-book-width) * 1.445 + 100px);
+    margin: 0 auto; transform: none; animation: none;
+    perspective: 1000px; align-self: start; justify-self: center;
+  }
+  .hero-art .hero-book {
+    width: var(--mobile-book-width);
+    height: calc(var(--mobile-book-width) * 1.445);
+    top: 19px; left: 50%; margin-left: calc(var(--mobile-book-width) / -2);
+    --book-x: -20px; --book-y: 0px; --book-angle: -9deg;
+    box-shadow: 7px 13px 20px #0004;
+  }
+  .hero-art .hero-book[data-selected="false"] {
+    --book-x: 35px; --book-y: 9px; --book-angle: 11deg;
+  }
+  .hero-art .hero-book[data-selected="true"]:hover { --book-y: 0px; }
+  .hero-art .hero-book[data-selected="false"]:hover { --book-x: 35px; }
+  .hero-art .hero-book.is-opening { --book-x: 28px; --book-y: 0px; --book-angle: 0deg; }
+  .hero-art .hero-book .book-inner,
+  .hero-art .hero-book.book-back .book-inner {
+    inset: 8px 9px 8px 12px; padding: 14px 3px 9px;
+  }
+  .hero-art .hero-book .book-kicker,
+  .hero-art .hero-book.book-back .book-kicker { font-size: 4px; letter-spacing: 1px; }
+  .hero-art .hero-book .book-ornament,
+  .hero-art .hero-book.book-back .book-ornament {
+    width: 35%; height: auto; aspect-ratio: 1; margin: 10px 0 8px; flex: 0 0 auto;
+  }
+  .hero-art .hero-book .book-main-title,
+  .hero-art .hero-book.book-back .book-main-title { font-size: clamp(25px, 7.2vw, 34px); letter-spacing: -.5px; }
+  .hero-art .hero-book .book-main-title i { font-size: clamp(32px, 9vw, 43px); }
+  .hero-art .hero-book .book-small-title,
+  .hero-art .hero-book.book-back .book-small-title { font-size: 6px; letter-spacing: 2.5px; }
+  .hero-art .hero-book .book-line,
+  .hero-art .hero-book.book-back .book-line { margin: 11px 0 8px; width: 20px; }
+  .hero-art .hero-book .book-author,
+  .hero-art .hero-book.book-back .book-author { font-size: 6px; letter-spacing: 3px; }
+  .hero-art .hero-book .book-pages,
+  .hero-art .hero-book.book-back .book-pages { padding: 20px 14px 12px; border-right-width: 3px; }
+  .hero-art .hero-book .page-heading,
+  .hero-art .hero-book.book-back .page-heading { font-size: 19px; margin-bottom: 13px; }
+  .hero-art .hero-book .page-excerpt,
+  .hero-art .hero-book.book-back .page-excerpt { font-size: 7px; line-height: 1.7; -webkit-line-clamp: 7; }
+  .hero-art .book-hint { bottom: 7px; font-size: 11px; line-height: 1.5; padding: 0 8px; }
+  .hero-art .art-caption, .hero-art .art-vertical { display: none; }
+  .hero-art .art-orbit { width: 88%; height: 74%; top: 14px; }
+  .hero-art .orbit-two { width: 98%; height: 56%; top: 50px; }
+  .hero-art .book-shadow { width: 68%; height: 22px; bottom: 52px; filter: blur(13px); }
+  .hero-art .star-one { top: 17px; left: 7%; font-size: 20px; }
+  .hero-art .star-two { right: 3%; top: 47%; font-size: 15px; }
+  .hero-art .star-three { bottom: 48px; left: 4%; font-size: 17px; }
+  .hero-bottom { margin-top: 0; padding: 20px 0 24px; gap: 16px; align-items: start; }
+  .hero-bottom > span { max-width: 245px; font-size: 7px; line-height: 2; letter-spacing: .8px; }
+  .hero-bottom i { margin: 0 7px; }
+  .hero-bottom a { font-size: 7px; line-height: 1.8; white-space: normal; max-width: 95px; }
+
+  .writing { padding-top: 48px; padding-bottom: 48px; }
+  .section-heading { gap: 18px; margin-bottom: 26px; }
+  .section-heading h2 { font-size: clamp(46px, 11vw, 62px); letter-spacing: -1.3px; margin-top: 18px; }
+  .section-description { font-size: 13px; line-height: 1.7; }
+  .collection-toolbar { font-size: 9px; letter-spacing: 1px; gap: 15px; margin-bottom: 8px; }
+  .toolbar-hint { font-size: 10px; }
+  .toolbar-hint > span { display: none; }
+  .collection-note { font-size: 18px; margin-top: 28px; }
+
+  .contact { padding-top: 48px; padding-bottom: 48px; gap: 30px; }
+  .contact h2 { font-size: clamp(52px, 13vw, 68px); margin: 18px 0 22px; }
+  .contact-copy > p:not(.eyebrow):not(.contact-boundaries) { font-size: 14px; line-height: 1.8; }
+  .contact-services { gap: 8px 12px; margin: 22px 0; }
+  .contact-services span { font-size: 11px; line-height: 1.6; }
+  .social-links a, .social-links button { font-size: 13px; min-height: 48px; padding: 14px 0; }
+  .copy-label { font-size: 9px; }
+  .contact-boundaries { font-size: 11px; line-height: 1.8; }
+  .contact-form-wrap { padding: 24px 22px; min-width: 0; }
+  .form-heading { margin-bottom: 23px; }
+  .form-heading h3 { font-size: 29px; }
+  .form-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  label { min-width: 0; font-size: 12px; margin-bottom: 22px; }
+  /* 16px inputs also prevent automatic focus zoom in mobile Safari. */
+  input, select, textarea { min-width: 0; max-width: 100%; font-size: 16px; min-height: 46px; padding: 11px 0; }
+  textarea { min-height: 140px; }
+  .send-button { min-height: 48px; font-size: 12px; }
+  .form-note { font-size: 11px; line-height: 1.7; }
+  #form-status { font-size: 12px; }
+  #turnstile-container { max-width: 100%; overflow-x: auto; }
+
+  .reader-header {
+    height: 74px; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px; padding: 0 16px; backdrop-filter: none;
+  }
+  .reader-header .wordmark { display: none; }
+  .reader-back { min-width: 0; min-height: 44px; gap: 9px; font-size: 11px; line-height: 1.4; }
+  .reader-back > span:last-child { max-width: 110px; }
+  .reader-controls { gap: 4px; }
+  .reader-controls button { min-width: 44px; height: 44px; padding: 0; font-size: 13px; }
+  .reader-article { padding: 0 22px; }
+  .reader-title-block { padding-top: 38px; }
+  .reader-title-block h1 { font-size: clamp(40px, 11vw, 56px); letter-spacing: -1.2px; margin: 18px 0; overflow-wrap: break-word; }
+  .reader-meta { font-size: 11px; line-height: 1.7; }
+  .reader-content-note { font-size: 12px; }
+  .reader-divider { margin: 24px 0; }
+  .reader-prose { line-height: 1.85; }
+  .reader-prose > p:first-child:first-letter { font-size: 3.5em; margin-top: 9px; }
+  .reader-end { margin-top: 38px; padding-top: 30px; }
+  .reader-end h2 { font-size: clamp(36px, 10vw, 46px); }
+  .reader-another { font-size: 12px; min-height: 44px; padding: 12px 0; }
+  #reader-top { width: 44px; height: 44px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .site-footer { height: auto; min-height: 105px; padding-top: 22px; padding-bottom: 22px; display: grid; grid-template-columns: auto 1fr; gap: 12px 24px; }
+  .site-footer > a:last-child { grid-column: 2; grid-row: 1; justify-self: end; font-size: 9px; padding: 12px 0; }
+  .site-footer > span { grid-column: 1 / -1; grid-row: 2; font-size: 15px; }
+  .section-reveal { transform: translateY(10px); transition-duration: .45s; }
+}
+
+@media (max-width: 600px) {
+  /* Small covers and readable summaries instead of two cramped poster columns. */
+  .samples-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .sample-card, .sample-card.featured {
+    display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 18px;
+    padding: 22px 0; margin: 0; min-height: 0;
+    background: transparent; border: 0; border-bottom: 1px solid var(--line);
+  }
+  :root[data-theme="light"] .sample-card.featured { background: transparent; border-color: var(--line); }
+  .sample-card .sample-cover, .sample-card.featured .sample-cover {
+    height: 158px; min-height: 0; width: 100%; padding: 18px 11px;
+    border: 1px solid #bca57530; align-self: center;
+  }
+  .sample-card .sample-cover:before { inset: 7px; }
+  .sample-card .cover-art, .sample-card.featured .cover-art { position: static; width: 43px; height: 43px; margin: 4px 0 0; flex-shrink: 0; opacity: .8; }
+  .sample-card .cover-topline { display: none; }
+  .sample-card .cover-number, .sample-card.featured .cover-number { top: 12px; right: 13px; font-size: 8px; }
+  .sample-card .cover-title, .sample-card.featured .cover-title { font-size: 21px; line-height: 1.02; margin: 10px 0 0; max-width: 100%; }
+  .sample-card .cover-byline, .sample-card.featured .cover-byline { left: auto; bottom: 13px; font-size: 5px; letter-spacing: 2px; }
+  .sample-card .sample-info, .sample-card.featured .sample-info { padding: 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+  .sample-card .sample-meta, .sample-card.featured .sample-meta { flex-wrap: wrap; justify-content: flex-start; gap: 6px 10px; font-size: 8px; letter-spacing: .5px; margin-bottom: 9px; }
+  .sample-card .sample-info h3, .sample-card.featured .sample-info h3 { font-size: 25px; line-height: 1.05; margin-bottom: 8px; }
+  .sample-card .sample-info > p, .sample-card.featured .sample-info > p { font-size: 12px; line-height: 1.65; max-width: none; }
+  .sample-card .sample-read, .sample-card.featured .sample-read { max-width: none; margin-top: 0; padding: 12px 0 2px; font-size: 8px; border: 0; }
+  .sample-card:hover .sample-cover { transform: none; }
+  .toolbar-hint { display: none; }
+}
+
+@media (max-width: 360px) {
+  .site-header { gap: 10px; }
+  .site-header nav { gap: 8px; }
+  .site-header .wordmark { font-size: 38px; }
+  .site-header .nav-contact { padding: 10px; }
+  .site-header .nav-contact span { display: none; }
+  .hero h1 { font-size: 54px; }
+  .sample-card, .sample-card.featured { grid-template-columns: 92px minmax(0, 1fr); gap: 14px; }
+  .sample-card .sample-cover, .sample-card.featured .sample-cover { height: 144px; }
+  .sample-card .cover-title, .sample-card.featured .cover-title { font-size: 18px; }
+  .sample-card .sample-info h3, .sample-card.featured .sample-info h3 { font-size: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal { transform: none; }
+}

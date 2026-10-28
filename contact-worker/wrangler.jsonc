@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sage-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-27",
+  "workers_dev": true,
+  "keep_vars": true,
+  "ratelimits": [
+    {
+      "name": "ATTEMPT_LIMITER",
+      "namespace_id": "10057001",
+      "simple": {
+        "limit": 12,
+        "period": 60
+      }
+    },
+    {
+      "name": "SENDER_LIMITER",
+      "namespace_id": "10057002",
+      "simple": {
+        "limit": 3,
+        "period": 60
+      }
+    },
+    {
+      "name": "EMAIL_LIMITER",
+      "namespace_id": "10057003",
+      "simple": {
+        "limit": 2,
+        "period": 60
+      }
+    },
+    {
+      "name": "DELIVERY_LIMITER",
+      "namespace_id": "10057004",
+      "simple": {
+        "limit": 20,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": false
+  }
+}
