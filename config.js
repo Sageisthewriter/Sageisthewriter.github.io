@@ -2,7 +2,7 @@
 // Set contactEndpoint to the deployed Worker's URL followed by /contact.
 // The Discord webhook URL and Turnstile secret belong only in the Worker.
 window.SAGE_CONFIG = {
-  contactEndpoint: '',
+  contactEndpoint: 'https://sagefolio.mishravaibhav2048.workers.dev/',
   // Optional: keep empty when the Worker has REQUIRE_TURNSTILE=false.
   turnstileSiteKey: '',
 };
